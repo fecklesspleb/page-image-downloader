@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Example gallery</title>
+<meta property="og:image" content="/img/share.png">
+<meta name="twitter:image" content="/img/share.png">
+</head>
+<body>
+<h1>Example gallery</h1>
+<!-- plain img with alt text -->
+<img src="/img/logo.png" alt="Example logo">
+<!-- srcset: the 1600w candidate should win -->
+<img src="/img/hero-400.png" srcset="/img/hero-400.png 400w, /img/hero-1600.png 1600w, /img/hero-800.png 800w" alt="Hero">
+<!-- lazy-load: placeholder in src, real image in data-src -->
+<img src="/img/placeholder.gif" data-src="/img/lazy.gif" alt="Lazy">
+<!-- picture/source with srcset in x descriptors -->
+<picture>
+  <source type="image/webp" srcset="/img/photo.webp 1x, /img/photo@2x.webp 2x">
+  <img src="/img/photo.jpg" alt="Photo">
+</picture>
+<!-- same bytes as logo.png under another name: a duplicate -->
+<img src="/img/logo-copy.png" alt="">
+<!-- a tracking pixel -->
+<img src="/img/pixel.gif" alt="">
+<!-- named .jpg but the server returns HTML -->
+<img src="/img/broken.jpg" alt="Broken">
+<!-- blocked by robots.txt -->
+<img src="/private/secret.png" alt="Secret">
+<!-- inline data URIs are skipped -->
+<img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">
+<!-- relative to the page, with a fragment that should be dropped -->
+<img src="img/relative.svg#icon" alt="Relative">
+<a href="/docs/report.pdf">Annual report (PDF)</a>
+<a href="/about.html">About</a>
+<a href="/docs/members-only.pdf">Members-only report (PDF)</a>
+</body>
+</html>
