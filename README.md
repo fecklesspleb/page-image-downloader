@@ -81,6 +81,7 @@ On November 3, 2026 (09:41 ET), with `--min-kb 2 --min-width 100`, against `http
 - It is a local command-line tool, so it fetches whatever addresses you give it or the page points to, including `localhost` and private network addresses. Don't run it as a public service on untrusted input.
 - Malformed URLs in a page don't stop the run: a URL that can't be parsed at all (such as `http://[oops/x.png`) is skipped, and one with a bad port, characters that can't be sent, or a download cut short before its `Content-Length` gets an `error` row in the manifest and is not saved.
 - One request at a time. Fine for tens of pages; slow for tens of thousands.
+- Already have a list or CSV of image URLs (no page to crawl)? Use [bulk-image-downloader](https://github.com/fecklesspleb/bulk-image-downloader) instead. This tool also accepts direct image URLs mixed with pages; that one is the list/CSV-only path with CSV column detection and parallel downloads.
 - robots.txt is checked at the URL you asked for, not again after a redirect. robots.txt that can't be reached (5xx or network error) counts as "disallow everything" for that host, as RFC 9309 suggests.
 
 ## Tests
