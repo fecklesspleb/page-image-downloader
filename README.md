@@ -103,3 +103,6 @@ Download images you have the right to use: your own site, openly licensed media,
 MIT. See [LICENSE](LICENSE). This code and README were written with AI assistance. Not affiliated with any of the sites named.
 
 To run this at scale without your own machine, I (fecklesspleb) also maintain two hosted Apify Actors: [Bulk Image and File Downloader](https://apify.com/fecklesspleb/bulk-image-downloader) ($1.00 per 1,000 files saved) and [Website Screenshot and PDF](https://apify.com/fecklesspleb/website-screenshot) ($0.80 per 1,000 screenshots), each plus a run-start fee of $0.00005 per GB of memory, charged at least once per run.
+
+
+Related Apify Actors: [Image EXIF and Metadata Extractor](https://apify.com/fecklesspleb/image-exif-extractor) ($0.001 per image); [Image Converter and Compressor](https://apify.com/fecklesspleb/image-converter-compressor) ($0.0015 per image); [Bulk File Downloader](https://apify.com/fecklesspleb/bulk-file-downloader) ($0.001 per file); [Favicon and Brand Asset Extractor](https://apify.com/fecklesspleb/favicon-brand-extractor) ($0.002 per site with a verified asset). Each also has the $0.00005 run-start event.
