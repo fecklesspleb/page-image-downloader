@@ -608,7 +608,10 @@ def main(argv=None):
 
     urls = list(args.urls)
     if args.input:
-        urls += read_url_file(args.input)
+        try:
+            urls += read_url_file(args.input)
+        except OSError as e:
+            p.error("cannot read input file %r: %s" % (args.input, e.strerror or e))
     if not urls:
         p.error("give at least one URL, or --input FILE")
     def _scheme(u):

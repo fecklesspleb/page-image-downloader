@@ -404,6 +404,13 @@ class EndToEndTests(LocalSite):
         with contextlib.redirect_stdout(io.StringIO()):
             self.assertEqual(pid.main([self.base + "/nope.png", "-o", self.out, "--delay", "0", "-q"]), 1)
 
+    def test_cli_missing_input_file_is_usage_error(self):
+        with contextlib.redirect_stderr(io.StringIO()) as err, self.assertRaises(SystemExit) as cm:
+            pid.main(["-i", os.path.join(self.out, "no-such-file.txt"),
+                      self.base + "/gallery.html", "-o", self.out, "-q"])
+        self.assertEqual(cm.exception.code, 2)
+        self.assertIn("cannot read input file", err.getvalue())
+
 
 class RobotsTests(unittest.TestCase):
     class FakeFetcher:
